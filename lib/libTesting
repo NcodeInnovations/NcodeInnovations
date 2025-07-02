@@ -1,0 +1,24 @@
+// lib/supabase.js
+import { supabase } from './supabaseClient'
+
+// Inserts one enquiry into your Supabase table
+export async function insertProjectEnquiry(data) {
+  const { data: result, error } = await supabase
+    .from('project_enquiries')    // your table name
+    .insert([data])
+    .single()
+
+  if (error) throw error
+  return result
+}
+
+// (Optional) Fetch enquiries for admin use
+export async function getProjectEnquiries(status, limit = 50) {
+  let query = supabase.from('project_enquiries').select('*')
+  if (status) query = query.eq('status', status)
+  query = query.limit(limit)
+
+  const { data, error } = await query
+  if (error) throw error
+  return data
+}
