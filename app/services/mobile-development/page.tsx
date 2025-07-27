@@ -445,7 +445,7 @@ export default function MobileDevelopmentPage() {
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="technologies">Technologies</TabsTrigger>
-                  <TabsTrigger value="pricing">Pricing</TabsTrigger>
+                  <TabsTrigger value="Mobile App Excellence">Mobile App Excellence</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="overview" className="mt-8">
@@ -482,7 +482,7 @@ export default function MobileDevelopmentPage() {
                   </Card>
                 </TabsContent>
                 
-                <TabsContent value="pricing" className="mt-8">
+                <TabsContent value="Mobile App Excellence" className="mt-8">
                   <Card>
                     <CardHeader>
                       <CardTitle>Investment & Value</CardTitle>
@@ -490,16 +490,16 @@ export default function MobileDevelopmentPage() {
                     <CardContent>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div className="text-center p-4 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-emerald-600 mb-1">Starting from $12,000</div>
-                          <div className="text-sm text-muted-foreground">Mobile Apps</div>
+                          <div className="text-2xl font-bold text-emerald-600 mb-1">Tailored MVP Solutions</div>
+                          <div className="text-sm text-muted-foreground">Custom apps built to match your business goals and user needs.</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-green-600 mb-1">4.8★</div>
-                          <div className="text-sm text-muted-foreground">Average Rating</div>
+                          <div className="text-2xl font-bold text-green-600 mb-1">4.8★ Client Satisfaction</div>
+                          <div className="text-sm text-muted-foreground">Trusted by startups for clarity, quality, and results.</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-purple-600 mb-1">3-4 weeks</div>
-                          <div className="text-sm text-muted-foreground">MVP Development</div>
+                          <div className="text-2xl font-bold text-purple-600 mb-1">Scalable Codebase</div>
+                          <div className="text-sm text-muted-foreground">Clean, maintainable code ready to grow with your product.</div>
                         </div>
                       </div>
                     </CardContent>

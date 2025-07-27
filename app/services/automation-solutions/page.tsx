@@ -446,7 +446,7 @@ export default function AutomationSolutionsPage() {
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="technologies">Technologies</TabsTrigger>
-                  <TabsTrigger value="pricing">Pricing</TabsTrigger>
+                  <TabsTrigger value="What’s Included">What’s Included</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="overview" className="mt-8">
@@ -483,24 +483,24 @@ export default function AutomationSolutionsPage() {
                   </Card>
                 </TabsContent>
                 
-                <TabsContent value="pricing" className="mt-8">
+                <TabsContent value="What’s Included" className="mt-8">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Investment & ROI</CardTitle>
+                      <CardTitle>What’s Included</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div className="text-center p-4 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-orange-600 mb-1">Starting from $5,000</div>
-                          <div className="text-sm text-muted-foreground">Automation Solutions</div>
+     <div className="text-2xl font-bold text-orange-600 mb-1">Mobile App MVP </div>
+                          <div className="text-sm text-muted-foreground">Tailored to Your Business Goals</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-green-600 mb-1">40+ hours</div>
-                          <div className="text-sm text-muted-foreground">Weekly Time Savings</div>
+                          <div className="text-2xl font-bold text-green-600 mb-1">Automation & Integrations</div>
+                          <div className="text-sm text-muted-foreground">Seamless Workflows Built In</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-purple-600 mb-1">3-5 days</div>
-                          <div className="text-sm text-muted-foreground">Simple Automation</div>
+                          <div className="text-2xl font-bold text-purple-600 mb-1">Design to Deployment</div>
+                          <div className="text-sm text-muted-foreground">Full Ownership & Support Throughout</div>
                         </div>
                       </div>
                     </CardContent>

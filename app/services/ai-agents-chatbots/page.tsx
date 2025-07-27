@@ -448,7 +448,7 @@ export default function AIAgentsChatbotsPage() {
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="technologies">Technologies</TabsTrigger>
-                  <TabsTrigger value="pricing">Pricing</TabsTrigger>
+                  <TabsTrigger value="Intelligent Virtual Agents">Intelligent Virtual Agents</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="overview" className="mt-8">
@@ -485,7 +485,7 @@ export default function AIAgentsChatbotsPage() {
                   </Card>
                 </TabsContent>
                 
-                <TabsContent value="pricing" className="mt-8">
+                <TabsContent value="Intelligent Virtual Agents" className="mt-8">
                   <Card>
                     <CardHeader>
                       <CardTitle>Investment & ROI</CardTitle>
@@ -493,16 +493,18 @@ export default function AIAgentsChatbotsPage() {
                     <CardContent>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div className="text-center p-4 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-indigo-600 mb-1">Starting from $6,000</div>
+                          <div className="text-2xl font-bold text-indigo-600 mb-1">Always-On Support, 24/7</div>
                           <div className="text-sm text-muted-foreground">AI Chatbots</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-green-600 mb-1">60%</div>
-                          <div className="text-sm text-muted-foreground">Cost Reduction</div>
+                          <div className="text-2xl font-bold text-green-600 mb-1">Multilingual, Human-Like Conversations</div>
+                          <div className="text-sm text-muted-foreground">Continuously Learning & Improving</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-purple-600 mb-1">3-5 days</div>
-                          <div className="text-sm text-muted-foreground">Basic FAQ Bot</div>
+                          <div className="text-2xl font-bold text-purple-600 mb-1">Seamless AI Integration</div>
+                          <div className="text-sm text-muted-foreground">Pre-trained on Common FAQs & Tasks
+
+</div>
                         </div>
                       </div>
                     </CardContent>
