@@ -64,7 +64,7 @@ export default function AboutPage() {
     {
       icon: Heart,
       title: "Client Success",
-      description: "Your success is our success. We're committed to delivering exceptional results.",
+      description: "When you succeed, we succeed. We’re committed to achieving outstanding outcomes togethe.",
       gradient: "from-green-500 to-emerald-500"
     },
     {

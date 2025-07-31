@@ -2,29 +2,20 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import {
+import dynamic from 'next/dynamic';
+import { 
   Globe,
   Smartphone,
   Brain,
   Bot,
   Database,
   Palette,
-  ArrowRight,
   CheckCircle,
-  Star,
   Clock,
-  DollarSign,
   Users,
   Zap,
   Shield,
   Layers,
-  Server,
   Rocket,
   Workflow,
   MessageSquare,
@@ -34,18 +25,21 @@ import {
   TrendingUp,
   Code,
   Sparkles,
-  Play,
   Award,
   Lightbulb,
   Settings,
   Monitor
 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+
+const Header = dynamic(() => import('@/components/header'), { ssr: false });
+const Footer = dynamic(() => import('@/components/footer'), { ssr: false });
 
 export default function ServicesPage() {
-  const [activeTab, setActiveTab] = useState('ai');
-
-  const services = {
-    ai: {
+  const services = [
+    {
       icon: Brain,
       title: "AI-Powered Solutions",
       emoji: "🧠",
@@ -69,14 +63,13 @@ export default function ServicesPage() {
         "NLP & Language Understanding"
       ],
       technologies: ["Python", "TensorFlow", "PyTorch", "OpenAI API", "Langchain", "Hugging Face"],
-      pricing: "Starting from $8,000",
       projects: [
         { name: "AI Analytics Platform", description: "Advanced predictive analytics with machine learning models", icon: BarChart3 },
         { name: "Computer Vision System", description: "Real-time image recognition and processing solution", icon: Target },
         { name: "NLP Document Processor", description: "Intelligent document analysis and extraction system", icon: MessageSquare }
       ]
     },
-    web: {
+    {
       icon: Globe,
       title: "Web Development",
       emoji: "🌐",
@@ -100,14 +93,13 @@ export default function ServicesPage() {
         "CMS or headless setup (optional)"
       ],
       technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB"],
-      pricing: "Starting from $3,500",
       projects: [
         { name: "E-commerce Platform", description: "Full-featured online store with AI recommendations", icon: Globe },
         { name: "Corporate Website", description: "Professional business website with CMS integration", icon: Monitor },
         { name: "SaaS Landing Page", description: "High-converting landing page with analytics", icon: TrendingUp }
       ]
     },
-    mobile: {
+    {
       icon: Smartphone,
       title: "Mobile App Development",
       emoji: "📱",
@@ -131,14 +123,13 @@ export default function ServicesPage() {
         "Scalable & maintainable code"
       ],
       technologies: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "AWS"],
-      pricing: "Starting from $12,000",
       projects: [
         { name: "AI Health App", description: "Smart health monitoring with AI-powered insights", icon: Smartphone },
         { name: "Social Platform", description: "Feature-rich social app with real-time messaging", icon: Users },
         { name: "Delivery App", description: "On-demand delivery with AI route optimization", icon: Rocket }
       ]
     },
-    automation: {
+    {
       icon: Workflow,
       title: "Automation Solutions",
       emoji: "⚙️",
@@ -162,14 +153,13 @@ export default function ServicesPage() {
         "Notifications & logging"
       ],
       technologies: ["Python", "Zapier", "Make", "Node.js", "REST APIs", "Webhooks"],
-      pricing: "Starting from $5,000",
       projects: [
         { name: "CRM Automation", description: "Automated lead processing and customer management", icon: Settings },
         { name: "Data Pipeline", description: "Automated data collection and processing system", icon: Database },
         { name: "Email Marketing Bot", description: "AI-powered email campaign automation", icon: Zap }
       ]
     },
-    agents: {
+    {
       icon: Bot,
       title: "AI Agents & Chatbots",
       emoji: "🤖",
@@ -193,14 +183,13 @@ export default function ServicesPage() {
         "Customer Data Integration"
       ],
       technologies: ["OpenAI", "Dialogflow", "Rasa", "Langchain", "WebSocket", "NLP"],
-      pricing: "Starting from $6,000",
       projects: [
         { name: "Customer Support Bot", description: "24/7 AI customer service with human handoff", icon: Bot },
         { name: "Sales Assistant", description: "AI-powered lead qualification and conversion", icon: Award },
         { name: "Voice Assistant", description: "Multi-modal AI assistant with voice capabilities", icon: MessageSquare }
       ]
     }
-  };
+  ];
 
   const additionalServices = [
     { icon: Database, title: "Database Design", description: "Scalable database architecture and optimization" },
@@ -223,7 +212,6 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       <Header />
-      
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-background to-purple-500/5">
@@ -232,7 +220,6 @@ export default function ServicesPage() {
               <Brain className="w-4 h-4 mr-2" />
               Our AI-Powered Services
             </Badge>
-            
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               <span className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
                 Next-Generation
@@ -242,12 +229,10 @@ export default function ServicesPage() {
                 AI Solutions
               </span>
             </h1>
-            
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               From intelligent automation to cutting-edge AI applications, we provide comprehensive 
               solutions that revolutionize how businesses operate in the digital age.
             </p>
-
             <Button 
               asChild
               size="lg"
@@ -258,172 +243,95 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Services Tabs */}
+        {/* Services Section (no tabs) */}
         <section className="py-20 lg:py-32">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-12">
-                {Object.entries(services).map(([key, service]) => (
-                  <TabsTrigger 
-                    key={key} 
-                    value={key}
-                    className="flex items-center space-x-2 p-4"
-                  >
-                    <span className="text-lg">{service.emoji}</span>
-                    <span className="hidden sm:inline text-sm font-medium">{service.title.split(' ')[0]}</span>
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-
-              {Object.entries(services).map(([key, service]) => (
-                <TabsContent key={key} value={key} className="space-y-12">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                    {/* Main Service Info */}
-                    <div className="lg:col-span-2 space-y-8">
-                      <div>
-                        <div className="flex items-center space-x-4 mb-6">
-                          <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
-                            <span className="text-2xl">{service.emoji}</span>
-                          </div>
-                          <div>
-                            <h2 className="text-3xl lg:text-4xl font-bold">{service.title}</h2>
-                            <p className="text-lg text-muted-foreground">{service.description}</p>
-                          </div>
-                        </div>
-                        
-                        <div className="bg-gradient-to-br from-muted/30 via-purple-500/5 to-cyan-500/5 rounded-xl p-6 border border-purple-500/10 mb-8">
-                          <h3 className="text-xl font-bold mb-3 flex items-center">
-                            <span className="mr-2">📌</span>
-                            What We Offer:
-                          </h3>
-                          <p className="text-muted-foreground leading-relaxed">{service.detailedDescription}</p>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-blue-500/5 via-cyan-500/5 to-teal-500/5 rounded-xl p-6 border border-blue-500/10 mb-8">
-                          <h3 className="text-xl font-bold mb-4 flex items-center">
-                            <span className="mr-2">🔧</span>
-                            How We Build:
-                          </h3>
-                          <div className="space-y-3">
-                            {service.howWeBuild.map((step, index) => (
-                              <div key={index} className="flex items-start space-x-3">
-                                <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                                  <span className="text-xs font-bold text-white">{index + 1}</span>
-                                </div>
-                                <p className="text-muted-foreground">{step}</p>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-green-500/5 via-emerald-500/5 to-teal-500/5 rounded-xl p-6 border border-green-500/10 mb-8">
-                          <h3 className="text-xl font-bold mb-4 flex items-center">
-                            <span className="mr-2">🕒</span>
-                            Timeline:
-                          </h3>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="flex items-center space-x-3">
-                              <Clock className="w-5 h-5 text-green-600" />
-                              <span className="font-medium">{service.timeline.mvp}</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                              <Rocket className="w-5 h-5 text-green-600" />
-                              <span className="font-medium">{service.timeline.full}</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-purple-500/5 rounded-xl p-6 border border-purple-500/10">
-                          <h3 className="text-xl font-bold mb-4 flex items-center">
-                            <span className="mr-2">💡</span>
-                            Features:
-                          </h3>
-                          <div className="grid grid-cols-2 gap-3">
-                            {service.features.map((feature, index) => (
-                              <div key={index} className="flex items-center space-x-2">
-                                <CheckCircle className="w-4 h-4 text-purple-500 flex-shrink-0" />
-                                <span className="text-sm font-medium">{feature}</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            {services.map((service, idx) => (
+              <Card key={idx} className="border-2 border-purple-500/20 shadow-xl bg-gradient-to-br from-background/95 to-purple-500/5">
+                <CardHeader className="flex flex-row items-center space-x-4">
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center`}>
+                    <span className="text-2xl">{service.emoji}</span>
+                  </div>
+                  <div>
+                    <CardTitle className="text-3xl lg:text-4xl">{service.title}</CardTitle>
+                    <p className="text-lg text-muted-foreground">{service.description}</p>
+                  </div>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 flex items-center">
+                      <span className="mr-2">📌</span>
+                      What We Offer:
+                    </h3>
+                    <p className="text-muted-foreground">{service.detailedDescription}</p>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 flex items-center">
+                      <span className="mr-2">🔧</span>
+                      How We Build:
+                    </h3>
+                    <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                      {service.howWeBuild.map((step, i) => (
+                        <li key={i}>{step}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 flex items-center">
+                      <span className="mr-2">🕒</span>
+                      Timeline:
+                    </h3>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <div className="flex items-center space-x-2">
+                        <Clock className="w-5 h-5 text-green-600" />
+                        <span className="font-medium">{service.timeline.mvp}</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <Rocket className="w-5 h-5 text-green-600" />
+                        <span className="font-medium">{service.timeline.full}</span>
                       </div>
                     </div>
-
-                    {/* Sidebar */}
-                    <div className="space-y-6">
-                      {/* Pricing & CTA */}
-                      <Card className="border-2 border-purple-500/20 shadow-xl bg-gradient-to-br from-background/95 to-purple-500/5">
-                        <CardHeader className="text-center">
-                          <CardTitle className="text-2xl">Ready to Start?</CardTitle>
-                          <CardDescription>Get your project started today</CardDescription>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                          <div className="text-center">
-                            <div className="text-3xl font-bold text-purple-600 mb-2">{service.pricing}</div>
-                            <p className="text-sm text-muted-foreground">Custom pricing available</p>
-                          </div>
-                          
-                          <Button 
-                            asChild
-                            className="w-full bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 hover:from-purple-600 hover:via-blue-600 hover:to-cyan-600 text-white h-12"
-                          >
-                            <Link href="/contact" className="flex items-center justify-center space-x-2">
-                              <Play className="w-5 h-5" />
-                              <span>Get Started</span>
-                            </Link>
-                          </Button>
-                          
-                          <div className="text-center">
-                            <p className="text-xs text-muted-foreground">Free consultation included</p>
-                          </div>
-                        </CardContent>
-                      </Card>
-
-                      {/* Technologies */}
-                      <Card className="border border-border/50">
-                        <CardHeader>
-                          <CardTitle className="text-lg flex items-center">
-                            <Code className="w-5 h-5 mr-2" />
-                            Technologies
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <div className="flex flex-wrap gap-2">
-                            {service.technologies.map((tech, index) => (
-                              <Badge key={index} variant="secondary" className="text-xs">{tech}</Badge>
-                            ))}
-                          </div>
-                        </CardContent>
-                      </Card>
-
-                      {/* Sample Projects */}
-                      <Card className="border border-border/50">
-                        <CardHeader>
-                          <CardTitle className="text-lg flex items-center">
-                            <Sparkles className="w-5 h-5 mr-2" />
-                            Sample Projects
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                          {service.projects.map((project, index) => (
-                            <div key={index} className="flex items-start space-x-3 p-3 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors duration-200">
-                              <div className="w-8 h-8 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <project.icon className="w-4 h-4 text-purple-500" />
-                              </div>
-                              <div>
-                                <h4 className="font-semibold text-sm">{project.name}</h4>
-                                <p className="text-xs text-muted-foreground">{project.description}</p>
-                              </div>
-                            </div>
-                          ))}
-                        </CardContent>
-                      </Card>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 flex items-center">
+                      <span className="mr-2">💡</span>
+                      Features:
+                    </h3>
+                    <ul className="list-disc list-inside text-muted-foreground space-y-1">
+                      {service.features.map((feature, i) => (
+                        <li key={i}>{feature}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 flex items-center">
+                      <Code className="w-5 h-5 mr-2" />
+                      Technologies
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {service.technologies.map((tech, i) => (
+                        <Badge key={i} variant="secondary" className="text-xs">{tech}</Badge>
+                      ))}
                     </div>
                   </div>
-                </TabsContent>
-              ))}
-            </Tabs>
+                  <div>
+                    <h3 className="text-xl font-bold mb-2 flex items-center">
+                      <Sparkles className="w-5 h-5 mr-2" />
+                      Sample Projects
+                    </h3>
+                    <div className="space-y-2">
+                      {service.projects.map((project, i) => (
+                        <div key={i} className="flex items-center space-x-2">
+                          <project.icon className="w-4 h-4 text-purple-500" />
+                          <span className="font-semibold">{project.name}:</span>
+                          <span className="text-muted-foreground">{project.description}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
 
@@ -436,7 +344,6 @@ export default function ServicesPage() {
                 Complementary services to ensure your AI transformation is complete and successful.
               </p>
             </div>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {additionalServices.map((service, index) => (
                 <Card key={index} className="group border border-border/50 hover:border-purple-500/30 transition-all duration-300 hover:shadow-lg">
@@ -453,6 +360,48 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Our Commitment Section */}
+        <section className="py-20 lg:py-32 bg-gradient-to-br from-background via-background to-purple-500/5">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <Badge variant="outline" className="mb-6 px-4 py-2 border-purple-500/20">
+              Our Commitment
+            </Badge>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 bg-clip-text text-transparent">
+              Our Commitment
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+              Your Success is Our Priority
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <Card className="border border-border/50 shadow-lg">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">Affordable, tailored solutions</h3>
+                </CardContent>
+              </Card>
+              <Card className="border border-border/50 shadow-lg">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">Fast development cycles</h3>
+                </CardContent>
+              </Card>
+              <Card className="border border-border/50 shadow-lg">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">Personalized, hands-on service</h3>
+                </CardContent>
+              </Card>
+              <Card className="border border-border/50 shadow-lg">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">Long-term partnership and support</h3>
+                </CardContent>
+              </Card>
+              <Card className="border border-border/50 shadow-lg">
+                <CardContent className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">Scalable technology for future growth</h3>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Process Section */}
         <section className="py-20 lg:py-32">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -462,7 +411,6 @@ export default function ServicesPage() {
                 A proven methodology that ensures successful AI implementation and transformation.
               </p>
             </div>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {processSteps.map((step, index) => (
                 <div key={index} className="relative group">
@@ -476,7 +424,6 @@ export default function ServicesPage() {
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{step.title}</h3>
                   <p className="text-muted-foreground">{step.description}</p>
-                  
                   {index < processSteps.length - 1 && (
                     <div className="hidden lg:block absolute top-6 -right-4 w-8 h-0.5 bg-gradient-to-r from-purple-500/50 to-transparent"></div>
                   )}
@@ -495,7 +442,6 @@ export default function ServicesPage() {
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Let's discuss how our AI-powered solutions can revolutionize your business operations and drive unprecedented growth.
             </p>
-            
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button 
                 asChild
@@ -504,7 +450,6 @@ export default function ServicesPage() {
               >
                 <Link href="/contact">Start AI Journey</Link>
               </Button>
-              
               <Button 
                 asChild
                 variant="outline"
@@ -517,7 +462,6 @@ export default function ServicesPage() {
           </div>
         </section>
       </main>
-      
       <Footer />
     </div>
   );
