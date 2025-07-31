@@ -445,7 +445,7 @@ export default function WebDevelopmentPage() {
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="technologies">Technologies</TabsTrigger>
-                  <TabsTrigger value="pricing">Pricing</TabsTrigger>
+                  <TabsTrigger value="End-to-End Deployment">End-to-End Deployment</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="overview" className="mt-8">
@@ -482,24 +482,24 @@ export default function WebDevelopmentPage() {
                   </Card>
                 </TabsContent>
                 
-                <TabsContent value="pricing" className="mt-8">
+                <TabsContent value="End-to-End Deployment" className="mt-8">
                   <Card>
                     <CardHeader>
-                      <CardTitle>Investment & Value</CardTitle>
+                      <CardTitle>End-to-End Deployment</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <div className="text-center p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-blue-600 mb-1">Starting from $3,500</div>
-                          <div className="text-sm text-muted-foreground">Professional Websites</div>
+                        <div className="text-center p-4 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-lg">
+     <div className="text-2xl font-bold text-orange-600 mb-1">Responsive Web Development</div>
+                          <div className="text-sm text-muted-foreground">Optimized for all devices</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-green-600 mb-1">300% ROI</div>
-                          <div className="text-sm text-muted-foreground">Average Return</div>
+                          <div className="text-2xl font-bold text-green-600 mb-1">Custom UI/UX Design</div>
+                          <div className="text-sm text-muted-foreground">Tailored, intuitive user interfaces</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-purple-600 mb-1">5-7 days</div>
-                          <div className="text-sm text-muted-foreground">Basic Website</div>
+                          <div className="text-2xl font-bold text-purple-600 mb-1">CMS & Backend Setup</div>
+                          <div className="text-sm text-muted-foreground">Scalable and manageable systems</div>
                         </div>
                       </div>
                     </CardContent>

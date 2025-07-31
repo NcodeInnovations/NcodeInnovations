@@ -237,90 +237,12 @@ export default function ContactPage() {
                   className="px-6 py-3"
                 >
                   <Sparkles className="w-4 h-4 mr-2" />
-                  Interactive Form
-                </Button>
-                <Button
-                  variant={!showVismeForm ? "default" : "ghost"}
-                  onClick={() => setShowVismeForm(false)}
-                  className="px-6 py-3"
-                >
-                  <Zap className="w-4 h-4 mr-2" />
                   Standard Form
                 </Button>
+                
               </div>
             </div>
-
-            {showVismeForm ? (
-              /* Visme Form Section */
-              <div className="max-w-6xl mx-auto">
-                <Card className="border-2 border-purple-500/20 shadow-2xl bg-gradient-to-br from-background/95 via-background to-purple-500/5 backdrop-blur-sm overflow-hidden">
-                  <CardHeader className="text-center pb-6">
-                    <CardTitle className="text-3xl flex items-center justify-center space-x-3">
-                      <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-xl flex items-center justify-center animate-pulse">
-                        <Sparkles className="w-7 h-7 text-white" />
-                      </div>
-                      <span>Interactive Contact Form</span>
-                    </CardTitle>
-                    <CardDescription className="text-lg">
-                      Experience our enhanced interactive form with beautiful animations and smart features.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="p-0">
-                    {/* Visme Form Container */}
-                    <div className="relative w-full" style={{ minHeight: '800px' }}>
-                      <div 
-                        className="visme_d w-full h-full" 
-                        data-title="B2B Newsletter Subscription" 
-                        data-url="n011jgz4-b2b-newsletter-subscription?fullPage=true" 
-                        data-domain="forms" 
-                        data-full-page="true" 
-                        data-min-height="100vh" 
-                        data-form-id="132180"
-                        style={{ 
-                          width: '100%', 
-                          minHeight: '800px',
-                          border: 'none',
-                          overflow: 'hidden'
-                        }}
-                      ></div>
-                      {!vismeLoaded && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-500/5 via-blue-500/5 to-cyan-500/5 backdrop-blur-sm z-10">
-                          <div className="text-center">
-                            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6 animate-spin">
-                              <Sparkles className="w-8 h-8 text-white" />
-                            </div>
-                            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
-                              Loading Interactive Form
-                            </h3>
-                            <p className="text-muted-foreground mb-6">
-                              Preparing your enhanced form experience with beautiful animations...
-                            </p>
-                            <div className="flex items-center justify-center space-x-2">
-                              <div className="w-3 h-3 bg-purple-500 rounded-full animate-bounce"></div>
-                              <div className="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
-                              <div className="w-3 h-3 bg-cyan-500 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                    <div className="p-6 text-center border-t border-border/50">
-                      <p className="text-sm text-muted-foreground mb-4">
-                        Having trouble with the interactive form? 
-                      </p>
-                      <Button 
-                        onClick={() => setShowVismeForm(false)}
-                        variant="outline"
-                        className="border-purple-500/20 hover:bg-purple-500/10"
-                      >
-                        Use Standard Form Instead
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ) : (
-              /* Standard Form */
+                        
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                 {/* Contact Form */}
                 <Card className="border-2 border-border/50 shadow-xl">
@@ -524,7 +446,7 @@ export default function ContactPage() {
                   </Card>
                 </div>
               </div>
-            )}
+            
           </div>
         </section>
 
