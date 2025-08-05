@@ -444,7 +444,7 @@ export default function AIPoweredSolutionsPage() {
                 <TabsList className="grid w-full grid-cols-3">
                   <TabsTrigger value="overview">Overview</TabsTrigger>
                   <TabsTrigger value="technologies">Technologies</TabsTrigger>
-                  <TabsTrigger value="pricing">Pricing</TabsTrigger>
+                  <TabsTrigger value="AI-Powered Solutions">AI-Powered Solutions</TabsTrigger>
                 </TabsList>
                 
                 <TabsContent value="overview" className="mt-8">
@@ -482,7 +482,7 @@ export default function AIPoweredSolutionsPage() {
                   </Card>
                 </TabsContent>
                 
-                <TabsContent value="pricing" className="mt-8">
+                <TabsContent value="AI-Powered Solutions" className="mt-8">
                   <Card>
                     <CardHeader>
                       <CardTitle>Investment & ROI</CardTitle>
@@ -490,16 +490,16 @@ export default function AIPoweredSolutionsPage() {
                     <CardContent>
                       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div className="text-center p-4 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-purple-600 mb-1">Starting from $8,000</div>
-                          <div className="text-sm text-muted-foreground">Custom AI Solutions</div>
+                          <div className="text-2xl font-bold text-purple-600 mb-1">Custom AI Model Development</div>
+                          <div className="text-sm text-muted-foreground">Purpose-built models for your need</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-green-500/10 to-emerald-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-green-600 mb-1">300% ROI</div>
-                          <div className="text-sm text-muted-foreground">Average Return</div>
+                          <div className="text-2xl font-bold text-green-600 mb-1">Predictive Analytics</div>
+                          <div className="text-sm text-muted-foreground">Data-driven, future-ready decisions</div>
                         </div>
                         <div className="text-center p-4 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rounded-lg">
-                          <div className="text-2xl font-bold text-blue-600 mb-1">2-3 weeks</div>
-                          <div className="text-sm text-muted-foreground">MVP Development</div>
+                          <div className="text-2xl font-bold text-blue-600 mb-1">Smart Automation & Workflows</div>
+                          <div className="text-sm text-muted-foreground">Streamline tasks with AI logic</div>
                         </div>
                       </div>
                     </CardContent>

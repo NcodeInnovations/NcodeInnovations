@@ -17,7 +17,7 @@ export default function Testimonials() {
       company: "TechStart Inc.",
       image: "https://images.pexels.com/photos/3785079/pexels-photo-3785079.jpeg?auto=compress&cs=tinysrgb&w=400",
       rating: 5,
-      testimonial: "Masood Technologies transformed our online presence completely. Their full-stack expertise and attention to detail exceeded our expectations. The AI chatbot they implemented increased our customer engagement by 300%.",
+      testimonial: "Ncode Innovations transformed our online presence completely. Their full-stack expertise and attention to detail exceeded our expectations. The AI chatbot they implemented increased our customer engagement by 300%.",
       project: "E-commerce Platform + AI Integration"
     },
     {
